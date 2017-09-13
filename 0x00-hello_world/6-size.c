@@ -1,6 +1,6 @@
 /**
  * main - Print size of variables
- * Description: This function prints size of different variables in the current computer
+ * Description: This function prints size of variables
  * Return: 0
  */
 

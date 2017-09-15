@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - Comb5
+ * main - Comb4
  * Description: Print 3 digits numbers
  * Return: 0
  */

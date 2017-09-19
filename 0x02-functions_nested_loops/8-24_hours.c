@@ -14,7 +14,9 @@ void jack_bauer(void)
 		while (j <= '9')
 		{
 			if (i == '2' && j == '4')
+			{
 				break;
+			}
 			else
 			{
 				t = '0';

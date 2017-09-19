@@ -9,7 +9,7 @@ void jack_bauer(void)
 
 	i = '0';
 	while (i <= '2')
-	{	
+	{
 		j = '0';
 		while (j <= '9')
 		{
@@ -34,7 +34,7 @@ void jack_bauer(void)
 					t++;
 				}
 				j++;
-			}	
+			}
 		}
 		i++;
 	}

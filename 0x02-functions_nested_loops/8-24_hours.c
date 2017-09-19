@@ -34,9 +34,7 @@ void jack_bauer(void)
 		}
 		i++;
 	}
-}
 
-/*
 	i = '2';
 	j = '0';
 
@@ -62,4 +60,3 @@ void jack_bauer(void)
 	}
 
 }
-*/

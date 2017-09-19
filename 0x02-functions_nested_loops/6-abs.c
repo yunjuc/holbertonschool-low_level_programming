@@ -7,7 +7,7 @@
  * Description: check the absolute value of an integer
  * Return: c - if c is greater than 0
  *         0 - if c is 0
- *         (0-c) - if c is smaller than 0
+ *         0-c - if c is smaller than 0
  */
 int _abs(int c)
 {

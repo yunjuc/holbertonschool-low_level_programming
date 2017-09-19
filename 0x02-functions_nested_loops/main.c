@@ -8,6 +8,6 @@
 
 int main(void)
 {
-        jack_bauer();
-	return (0);
+    print_alphabet_x10();
+    return (0);
 }

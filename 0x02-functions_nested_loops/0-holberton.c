@@ -5,7 +5,6 @@
  * Description: Print 'Holberton'
  * Return: 0
  */
-
 int main(void)
 {
 	_putchar('H');

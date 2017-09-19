@@ -3,7 +3,6 @@
 /**
  * print_alphabet - print alphabet letters
  */
-
 void print_alphabet(void)
 {
 	int i = 'a';

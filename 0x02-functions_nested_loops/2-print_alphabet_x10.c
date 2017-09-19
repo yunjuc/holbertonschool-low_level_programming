@@ -3,7 +3,6 @@
 /**
  * print_alphabet_x10 - print alphabet letters x10
  */
-
 void print_alphabet_x10(void)
 {
 	int i, j;

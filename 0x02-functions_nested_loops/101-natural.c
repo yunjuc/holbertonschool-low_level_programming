@@ -19,14 +19,14 @@ int main(void)
 			sum = sum + num;
 	}
 	num = 0;
-	for (i = 1; i <= 1024 / 5; i++)
+	for (i = 1; i < 1024 / 5; i++)
 	{
 		num = num + 5;
 		if (num < 1024)
 			sum = sum + num;
 	}
 	num = 0;
-	for (i = 1; i <= 1024 / 15; i++)
+	for (i = 1; i < 1024 / 15; i++)
 		num = num + 15;
 		if (num < 1024)
 			sum = sum - num;

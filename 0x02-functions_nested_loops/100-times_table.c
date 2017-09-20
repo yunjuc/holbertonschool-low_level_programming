@@ -22,7 +22,7 @@ void print_times_table(int c)
 					_putchar('0');
 				else
 				{
-		 			if (product / 100 == 0)
+					if (product / 100 == 0)
 						_putchar(' ');
 					else
 						_putchar(product / 100 + '0');
@@ -44,5 +44,7 @@ void print_times_table(int c)
 		}
 	}
 	else
-	return ;
+	{
+	;
+	}
 }

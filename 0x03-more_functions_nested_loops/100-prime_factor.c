@@ -6,16 +6,16 @@
  */
 int main(void)
 {
-	int i, j;
+	long i, n, j;
 
-	j = 2;
-	for (i = 1; i < 612852475143 / 2; i++)
+	n = 612852475143;
+	j = 0;
+	for (i = 2; i < n; i++)
 	{
-		if (612852475143 % i == 0 && i > j)
+		if (n % i == 0)
+			n = n / i;
 			j = i;
-		else
-			j = j;
 	}
-	printf("%d\n", j);
+	printf("%ld\n", j);
 	return (0);
 }

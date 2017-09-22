@@ -8,11 +8,13 @@ int main(void)
 {
 	int i, j;
 
-	for (i = 1; i < 612852475143 / 2; i++)
+	j = 2;
+	for (i = 1; i < 612852475143 / 3; i++)
 	{
-		if (612852475143 % i == 0)
+		if (612852475143 % i == 0 && i > j)
 			j = i;
-		printf("%d\n", j);
+		else
+			j = j;
 	}
 	printf("%d\n", j);
 	return (0);

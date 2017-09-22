@@ -1,1 +1,1 @@
-2nd C project - variables and loop
+C variables and loop scripts

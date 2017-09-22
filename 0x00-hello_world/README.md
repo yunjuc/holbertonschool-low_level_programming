@@ -1,1 +1,1 @@
-This is my first C project folder.
+Basic C command scripts

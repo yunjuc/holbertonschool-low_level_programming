@@ -1,1 +1,1 @@
-C functions and nested loops projects.
+C functions and nested loops scripts

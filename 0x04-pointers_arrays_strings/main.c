@@ -8,9 +8,11 @@
  */
 int main(void)
 {
-    print_triangle(2);
-    print_triangle(10);
-    print_triangle(1);
-    print_triangle(0);
+    int n;
+
+    n = 402;
+    printf("n=%d\n", n);
+    reset_to_98(&n);
+    printf("n=%d\n", n);
     return (0);
 }

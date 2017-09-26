@@ -2,16 +2,16 @@
 
 /**
  * _puts - print a string
- * @s: first address of string array
+ * @str: first address of string array
  *
  * Description: take first address of the array and print the string
  * Return: 0
  */
-int _puts(char *str)
+void _puts(char *str)
 {
 	int i;
 
-	while (s[i] != 0)
-		i++;
-	return (i);
+	for (i = 0; str[i] != 0; i++)
+		_putchar(str[i]);
+	_putchar('\n');
 }

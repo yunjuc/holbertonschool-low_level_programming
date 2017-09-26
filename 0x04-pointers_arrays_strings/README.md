@@ -1,4 +1,4 @@
-C pointer, array and string scripts  
+## C pointer, array and string scripts  
   
 0-reset_to_98.c: take a pointer to an int as parameter and updates the value to 98  
   

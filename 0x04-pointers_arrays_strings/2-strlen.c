@@ -2,7 +2,7 @@
 
 /**
  * _strlen - count string length
- * @s: address of string array
+ * @s: first address of strsng array
  *
  * Description: take a string array address and return the length
  * Return: lenghth of string

@@ -20,5 +20,9 @@ int main(void)
    *p2 = *p + 1337;
    printf("%d\n", *p2);
 
+   char s[5] = "holb";
+   s + 'e';
+   printf("%s\n", s);   
+
    return (0);
 }

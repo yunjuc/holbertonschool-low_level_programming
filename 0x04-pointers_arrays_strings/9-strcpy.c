@@ -6,7 +6,7 @@
  * @src: string to be copied
  *
  * Description: copya string and point it to a pointer
- * R:eturn: destination pointer
+ * Return: destination pointer
  */
 char *_strcpy(char *dest, char *src)
 {

@@ -12,10 +12,14 @@ char *rot13(char *s)
 		i = i;
 	for (j = 0; j < i; j++)
 	{
-		if (s[j] >= 'a' && s[j] <= 'z')
+		if (s[0] == 'R' && s[j] >= 'a' && s[j] <= 'z')
 			s[j] = s[j] - 13;
-		else if (s[j] >= 'A' && s[j] <= 'Z')
+		else if (s[0] == 'R' && s[j] >= 'A' && s[j] <= 'Z')
 			s[j] = s[j] - 13;
+		else if (s[0] == 'E' && s[j] >= 84 && s[j] <= 109)
+			s[j] = s[j] + 13;
+		else if (s[0] == 'E' && s[j] >= 52 && s[j] <= 77)
+			s[j] = s[j] + 13;
 		else
 		{
 			;

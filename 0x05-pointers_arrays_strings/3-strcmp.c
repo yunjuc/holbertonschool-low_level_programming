@@ -2,7 +2,7 @@
  * _strcmp - compare two strings
  * @s1: 1st string
  * @s2: 2nd sting
- * Description: compare char one by one and return an value when difference found
+ * Description: compare char one by one and return value when difference found
  * Return: the differece in intger
  */
 int _strcmp(char *s1, char *s2)

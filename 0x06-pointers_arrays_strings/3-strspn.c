@@ -10,5 +10,9 @@ unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int i;
 
-	
+	for ( ; *s != 0; s++)
+	{
+		for ( ; *accept != 0; aceept++)
+	}
+	return (i);
 }

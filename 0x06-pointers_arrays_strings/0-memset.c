@@ -1,11 +1,11 @@
 #include "holberton.h"
 
 /**
- * _memset - fill memory with s constant byte
+ * _memset - fill memory with constant byte
  * @s: buffer array
- * @b: constant byte
- * @n: size of byte to fill
- * Description: fill n bytes in the memory pointed by s with b
+ * @b: value to be filled
+ * @n: size of byte
+ * Description: fill byte with constant value
  * Return: array with new byte
  */
 char *_memset(char *s, char b, unsigned int n)

@@ -5,7 +5,7 @@
  * @s: string
  * @c: char to be searched
  * Return: char - first occurrence when char is found
- *         null - char is not found
+ *         NULL - char is not found
  */
 char *_strchr(char *s, char c)
 {
@@ -14,5 +14,5 @@ char *_strchr(char *s, char c)
 		if (*s == c)
 			return (s);
 	}
-	return ('\0');
+	return ("");
 }

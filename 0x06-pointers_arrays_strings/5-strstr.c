@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 
 /**
  * _strstr - find first occurence of string from source string
@@ -9,12 +10,13 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
+	int i, j;
 
-	for ( ; *haystack != 0; haystack++)
+	for (i = 0; needle[i] != '\0'; i++)
 	{
-		for ( ; *needle != 0; needle++)
-			if (*needle == *haystack)
-				return (haystack);
+		for (j = 0; haystack[j] != '\0'; j++)
+			if (haystack[j] == needle[i])
+				return (&haystack[j]);
 	}
 	return ("");
 }

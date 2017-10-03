@@ -9,10 +9,12 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	for ( ; *s != 0; s++)
+
+	for ( ; *haystack != 0; haystack++)
 	{
-		for ( ; *accept == *s && *accept != 0; ) 
-			return (s);
+		for ( ; *needle != 0; needle++)
+			if (*needle == *haystack)
+				return (haystack);
 	}
 	return ("");
 }

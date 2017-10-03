@@ -9,13 +9,13 @@
  *         NULL - char is not found
  */
 char *_strchr(char *s, char c)
-{
-	if (c == '')
-		return (NULL);
+{;
 	for ( ; *s != 0; s++)
 	{
 		if (*s == c)
 			return (s);
 	}
+	if (c == '\0')
+		return (NULL);
 	return (NULL);
 }

@@ -2,9 +2,9 @@
 #include <stdio.h>
 
 /**
- * prnt-diagsums - print sums of diagonals of matrixd
- * @a: row of array
- * @size: column of array
+ * prnt-diagsums - print sums of diagonal integers of a matrix
+ * @a: row of matrix
+ * @size: column of matrix
  * Return: 0
  */
 void print_diagsums(int *a int size)

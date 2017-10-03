@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 
 /**
  * _strpbrk - first occurence in string from a set of char
@@ -10,16 +11,14 @@
 char *_strpbrk(char *s, char *accept)
 {
 	int i, j;
-	char *tmp;
 
-	tmp = s;
-	for (i = 0 ; accept[i] != '\0'; i++)
+	for (i = 0 ; s[i] != '\0'; i++)
 	{
-		for (j = 0 ; tmp[j] != '\0' && tmp[j] != accept[i] ; j++)
+		for (j = 0 ; accept[j] != '\0' ; j++)
 		{
-			if ( tmp[j] <= *s)
-				*s = tmp[j];
+			if (accept[j] == s[i])
+				return (&s[i]);
 		}
 	}
-	return (s);
+	return (NULL);
 }

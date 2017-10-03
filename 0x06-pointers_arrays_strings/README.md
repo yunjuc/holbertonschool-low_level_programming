@@ -12,8 +12,8 @@
   
 5-locate a substring   
   
-6-print the chessboard  
+7-print the chessboard  
   
-7-print the sum of the two diagonals of a square matrix of integers  
+8-print the sum of the two diagonals of a square matrix of integers  
    
-8-set the value of a pointer to a char  
+9-set the value of a pointer to a char  

@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include <string.h>
 
-int main ()
+int main()
 {
-   int len;
-   const char str1[] = "hello, world";
-   const char str2[] = "oeh";
+   const char haystack[20] = "TutorialsPoint Point";
+   const char needle[10] = "oi";
+   char *ret;
 
-   len = strspn(str1, str2);
+   ret = strstr(haystack, needle);
 
-   printf("Length of initial segment matching %d\n", len );
+   printf("The substring is: %s\n", ret);
    
    return(0);
 }

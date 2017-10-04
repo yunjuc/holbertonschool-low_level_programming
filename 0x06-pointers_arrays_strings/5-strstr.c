@@ -5,7 +5,7 @@
  * _strstr - find first occurence of string from source string
  * @haystack: source string
  * @needle: string to be searched
- * Return: s - first occurence of string
+ * Return: haystack - first occurence in source string
  *         NULL - no match found
  */
 char *_strstr(char *haystack, char *needle)

@@ -5,7 +5,7 @@
  * _strpbrk - first occurence in string from a set of char
  * @s: source string
  * @accept: char to be compared
- * Return: s - the matched bytes in the string
+ * Return: &s[i] - the matched bytes of source string
  *         NULL - no match found
  */
 char *_strpbrk(char *s, char *accept)

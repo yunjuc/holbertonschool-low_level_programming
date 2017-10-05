@@ -30,11 +30,8 @@ int _checker(char *s, char *p)
 {
 	if (*s != *p)
 		return (0);
-	else
-	{
-		_checker(s + 1, p - 1);
-		return (1);
-	}
+	_checker(s + 1, p - 1);
+	return (1);
 }
 
 /**

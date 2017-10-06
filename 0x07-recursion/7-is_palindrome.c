@@ -27,7 +27,7 @@ int checker(char *s, char *p)
 {
 	if (*s != *p)
 		return (0);
-	else if (*s == *p && s <= p)
+	if (*s == *p && s <= p)
 		return (1);
 	return (checker(s + 1, p - 1));
 }

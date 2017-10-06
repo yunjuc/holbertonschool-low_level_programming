@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 int _strlen(char *);
-int checker(char *, char *, int);
+int checker(char *, char *);
 
 /**
  * is_palindrome - check if a string is palindrome
@@ -11,23 +11,25 @@ int checker(char *, char *, int);
  */
 int is_palindrome(char *s)
 {
-	return (checker(s, s + _strlen(s) - 1, _strlen(s)));
+	if (_strlen(s) <= 1)
+		return (0);
+	return (checker(s, s + _strlen(s) - 1));
 }
 
 /**
  * checker - check if first and last letters are the same
  * @s: begining of string
  * @p: end of string
- * @len: string lenght
  * Return: 1 - is the same
  *         0 - not the same
  */
-int checker(char *s, char *p, int len)
+int checker(char *s, char *p)
 {
-	if (*s != *p || len == 0)
+	if (*s != *p)
 		return (0);
-	checker(s + 1, p - 1, len);
-	return (1);
+	else if (*s == *p && s <= p)
+		return (1);
+	return (checker(s + 1, p - 1));
 }
 
 /**

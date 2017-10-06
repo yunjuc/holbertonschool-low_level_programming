@@ -1,7 +1,10 @@
 ## C Static Libraries  
 
-libholberton.a-a static library
+### libholberton.a  
+Create a static library
   
-holberton.h-static libary. h file  
+### holberton.h  
+Static libary. h file    
   
-create_static_lib.sh-a script called create_static_lib.sh that creates a static library
+### create_static_lib.s  h
+Create a script called create_static_lib.sh that creates a static library

@@ -10,13 +10,11 @@ int checker(int, int);
  */
 int is_prime_number(int n)
 {
-	int i = 1;
+	int i = 2;
 
 	if (n <= 1)
 		return (0);
-	else if (checker(n, i) == 0)
-		return (0);
-	return (n / checker(n, i));
+	return (checker(n, i));
 }
 
 /**
@@ -29,7 +27,7 @@ int is_prime_number(int n)
 int checker(int n, int i)
 {
 	if (n == i)
-		return (i);
+		return (1);
 	else if (n % i == 0)
 		return (0);
 	return (checker(n, i + 1));

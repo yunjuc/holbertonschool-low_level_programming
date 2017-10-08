@@ -2,6 +2,8 @@
 
 /**
  * main - print the number of arguments
+ * @argc: number count of argument
+ * @argv: argument
  * Description: print number of arguments passed to main
  * Return: 0
  */

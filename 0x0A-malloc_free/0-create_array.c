@@ -7,7 +7,7 @@
  * @c: use c to initialize the array
  * Description: create an array of char and initialize it with c
  * Return: pointer to array
- *         NULL is size = 0
+ *         NULL - size = 0
  */
 char *create_array(unsigned int size, char c)
 {
@@ -18,8 +18,9 @@ char *create_array(unsigned int size, char c)
 		return (NULL);
 	ptr = malloc(size * sizeof(char));
 	if (ptr == NULL)
-		return (ptr);
+		return (NULL);
 	for (i = 0; i < size; i++)
 		ptr[i] = c;
+	ptr[i] = '\0';
 	return (ptr);
 }

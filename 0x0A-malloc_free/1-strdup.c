@@ -1,27 +1,27 @@
 #include "holberton.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 /**
-  * _strdup - duplicates a string
-  * @str: the string to duplicate
-  * Return: NULL if malloc fails or if str is NULL, else pointer to new string
-  */
-
+ * _strdup - copy a string
+ * @str: string to be copied
+ * Description: copy a string from memeory and return a pointer point to it
+ * Return: pointer to copied string
+ *         NULL - string is NULL, or memory is insufficient
+ */
 char *_strdup(char *str)
 {
 	char *ptr;
-	int i, count;
+	int i, length;
 
-	count = 0;
 	if (str == NULL)
 		return (NULL);
-	for (i = 0; str[i] != '\0'; i++)
-		count++;
-	ptr = malloc(sizeof(char) * count);
+	for (length = 0; str[length] != '\0'; length++)
+		length = length;
+	ptr = malloc(length * sizeof(str));
 	if (ptr == NULL)
 		return (NULL);
-	for (i = 0; i < count; i++)
+	for (i = 0 ; str[i] != '\0' ; i++)
 		ptr[i] = str[i];
+	ptr[i] = '\0';
 	return (ptr);
 }

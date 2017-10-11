@@ -6,7 +6,7 @@
  * @str: string to be copied
  * Description: copy a string from memeory and return a pointer point to it
  * Return: pointer to copied string
- *         NULL - string is NULL, or memory is insufficient
+ *         NULL - string is NULL
  */
 char *_strdup(char *str)
 {

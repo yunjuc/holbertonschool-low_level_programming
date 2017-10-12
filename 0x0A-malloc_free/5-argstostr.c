@@ -1,7 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
-
-int _strlen(char *);
+#include <stdio.h>
 
 /**
  * argstostr - print a string from argv
@@ -30,21 +29,8 @@ char *argstostr(int ac, char **av)
 		for (j = 0; av[i][j] != '\0'; j++, n++)
 			s[n] = av[i][j];
 		s[n] = '\n';
+		n++;
 	}
 	s[n + 1] = '\0';
 	return (s);
-}
-
-/**
- * _strlen - count string length
- * @s: string to be counted
- * Return: string length
- */
-int _strlen(char *s)
-{
-	int len;
-
-	for (len = 0; s[len] != '\0'; len++)
-		len = len;
-	return (len);
 }

@@ -6,7 +6,7 @@
   
 2-a function that searches for an integer  
  
-### Write a program that performs simple operations   
+#### Write a program that performs simple operations   
 3-calc.h: header file    
 3-get_op_func.c funcation callback file     
 3-main.c: main file  

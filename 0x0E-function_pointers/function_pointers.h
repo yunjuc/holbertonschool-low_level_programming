@@ -1,4 +1,4 @@
-#ifndef funcction_pointers_h
+#ifndef function_pointers_h
 #define function_pointers_h
 
 int _puchar(char);

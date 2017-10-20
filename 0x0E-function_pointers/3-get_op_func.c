@@ -5,8 +5,8 @@
 
 /**
  * get_op_func - function pointer
- * @s: operator
- * Return: result of operation
+ * @s: pointer to operator char
+ * Return: pointer to op funcations
  */
 int (*get_op_func(char *s))(int, int)
 {

@@ -5,7 +5,7 @@
 /**
  * sum_them_all - return sum of all arguments
  * @n: numbers to be summed
- * Return: final result. 0 if no number is received.
+ * Return: sum of numbers. 0 if no number is received.
  */
 int sum_them_all(const unsigned int n, ...)
 {

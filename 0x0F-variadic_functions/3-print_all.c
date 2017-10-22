@@ -12,6 +12,7 @@ void print_all(const char * const format, ...)
 {
 	va_list ap;
 	int i = 0;
+	char *s;
 
 	va_start(ap, format);
 
@@ -29,15 +30,11 @@ void print_all(const char * const format, ...)
 				printf("%c", va_arg(ap, int));
 				break;
 			case 's':
-/*
-*				if (va_arg(ap, char *) == NULL)
-*				{
-*
-*					printf("(nil)");
-*					break;
-*				}
-*/
-				printf("%s", va_arg(ap, char *));
+				s = va_arg(ap, char *);
+				if (s == NULL)
+					printf("(nil)");
+				else
+					printf("%s", s);
 				break;
 			default:
 				break;

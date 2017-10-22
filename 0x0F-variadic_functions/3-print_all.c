@@ -15,21 +15,18 @@ void print_all(const char * const format, ...)
 
 	va_start(ap, format);
 
-	if (format == NULL)
-		return;
-
-	while (format[i] != '\0' && i < 9)
+	while (format != NULL && format[i] != '\0' && i < 9)
 	{
 		switch (format[i])
 		{
 			case 'i':
-				printf("%d, ", va_arg(ap, int));
+				printf("%d", va_arg(ap, int));
 				break;
 			case 'f':
-				printf("%f, ", va_arg(ap, double));
+				printf("%f", va_arg(ap, double));
 				break;
 			case 'c':
-				printf("%c, ", va_arg(ap, int));
+				printf("%c", va_arg(ap, int));
 				break;
 			case 's':
 /*
@@ -40,11 +37,14 @@ void print_all(const char * const format, ...)
 *					break;
 *				}
 */
-				printf("%s, ", va_arg(ap, char *));
+				printf("%s", va_arg(ap, char *));
 				break;
 			default:
 				break;
 		}
+		if ((format[i] == 'i' || format[i] == 'f' || format[i] == 'c' 
+		|| format[i] == 's') && format[i + 1] != '\0')
+			printf(", ");
 		i++;
 	}
 	printf("\n");

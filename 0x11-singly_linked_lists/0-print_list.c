@@ -2,7 +2,7 @@
 #include <unistd.h>
 
 int _putchar(char c);
-void _puts(char *str);
+void str_print(char *str);
 
 /**
  * print_list - print elements in a list
@@ -15,7 +15,7 @@ size_t print_list(const list_t *h)
 
 	while (h != NULL)
 	{
-		_puts(h->str);
+		str_print(h->str);
 		h = h->next;
 		size++;
 	}
@@ -35,15 +35,18 @@ int _putchar(char c)
 }
 
 /**
- * _puts - print a string
+ * str_print - print a string
  * @str: pointer to string
  * Return: 0
  */
-void _puts(char *str)
+void str_print(char *str)
 {
 	int i;
+	char *s = str;
 
-	for (i = 0; str[i] != 0; i++)
-		_putchar(str[i]);
+	if (s == NULL)
+		s = "(nil)";
+	for (i = 0; s[i] != 0; i++)
+		_putchar(s[i]);
 	_putchar('\n');
 }

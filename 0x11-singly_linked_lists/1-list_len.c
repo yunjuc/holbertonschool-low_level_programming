@@ -10,7 +10,7 @@ size_t list_len(const list_t *h)
 	unsigned int size = 0;
 
 	if (h == NULL)
-		return (size);
+		return (0);
 	while (h->next != NULL)
 	{
 		h = h->next;

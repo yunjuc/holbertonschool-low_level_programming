@@ -6,7 +6,7 @@
  * add_node_end - add node to list end
  * @head: pointer to list head
  * @str: string to be copied
- * Return: pointer to new node
+ * Return: pointer to new node and create new list if *head is NULL
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
@@ -18,12 +18,15 @@ list_t *add_node_end(list_t **head, const char *str)
 		return (NULL);
 	if (*head == NULL)
 		*head = new;
-	temp = *head;
-	while (temp->next != NULL)
-		temp = temp->next;
-	temp->next = new;
-	new->str = strdup(str);
-	new->len = strlen(str);
-	new->next = NULL;
+	else
+	{
+		temp = *head;
+		while (temp->next != NULL)
+			temp = temp->next;
+		temp->next = new;
+	}
+		new->str = strdup(str);
+		new->len = strlen(str);
+		new->next = NULL;
 	return (new);
 }

@@ -3,6 +3,7 @@
 
 /**
  * get_bit - return value of a given bit
+ * @n: int to be tested
  * @index: index bit
  * Return: bit value, -1 if failed
  */

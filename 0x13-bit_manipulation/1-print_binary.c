@@ -8,10 +8,9 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned int mask = 1;
-	int temp = n, count = 0;
+	unsigned long int mask = 1, count = 0, temp = n;
 
-	while (temp)
+	while (temp && (count <= 64))
 	{
 		temp = temp >> 1;
 		count++;

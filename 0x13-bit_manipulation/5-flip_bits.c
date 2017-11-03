@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * flip_bit - flip bit value from n to m
+ * flip_bits - flip bit value from n to m
  * @n: old number
  * @m: new number
  * Return: number of bits flipped to get the new number

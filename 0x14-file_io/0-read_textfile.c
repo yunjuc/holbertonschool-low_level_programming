@@ -12,7 +12,7 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd, num;
+	int fd, input_n, output_n;
 	char *buffer = NULL;
 
 	if (filename == NULL)
@@ -26,9 +26,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (buffer == NULL)
 		return (0);
 
-	read(fd, buffer, letters);
-	num = write(STDOUT_FILENO, buffer, letters);
+	input_n = read(fd, buffer, letters);
+	output_n = write(STDOUT_FILENO, buffer, input_n);
 	close(fd);
 	free(buffer);
-	return (num);
+	return (output_n);
 }

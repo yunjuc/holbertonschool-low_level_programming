@@ -50,10 +50,10 @@ void copy_file(char *src, char *new)
 		print_error(99, new);
 	end1 = close(fd1);
 	if (end1 == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd1);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd1), exit(100);
 	end2 = close(fd2);
 	if (end2 == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd2);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd2), exit(100);
 	free(buffer);
 }
 

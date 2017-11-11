@@ -30,24 +30,31 @@ int main(int ac, char **av)
  */
 void copy_file(char *src, char *new)
 {
+	int buffsize = 1024;
 	int fd1, fd2, input, output, end1, end2;
 	char *buffer = NULL;
 
+	if (src == NULL)
+		print_error(98, src);
+	if (new == NULL)
+		print_error(99, new);
 	fd1 = open(src, O_RDONLY);
 	if (fd1 == -1)
 		print_error(98, src);
 	fd2 = open(new, O_WRONLY | O_TRUNC | O_CREAT, 0664);
 	if (fd2 == -1)
 		print_error(99, new);
-	buffer = malloc(sizeof(char) * 1024);
+	buffer = malloc(sizeof(char) * buffsize);
 	if (buffer == NULL)
 		return;
-	input = read(fd1, buffer, 1024);
-	if (input == -1)
-		print_error(98, src);
-	output = write(fd2, buffer, input);
-	if (output == -1)
-		print_error(99, new);
+	do {
+		input = read(fd1, buffer, buffsize);
+		if (input == -1)
+			print_error(98, src);
+		output = write(fd2, buffer, input);
+		if (output == -1)
+			print_error(99, new);
+	} while (input == buffsize);
 	end1 = close(fd1);
 	if (end1 == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd1), exit(100);

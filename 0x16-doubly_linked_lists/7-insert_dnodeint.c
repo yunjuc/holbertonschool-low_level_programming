@@ -1,8 +1,8 @@
 #include "lists.h"
 
 /**
- * insert_dlistint - insert new node to a list
- * @head: pointer to list head
+ * insert_dnodeint_at_index - insert new node to a list
+ * @h: pointer to list head
  * @idx: node index
  * @n: node data
  * Return: address of the new node, or NULL if failed

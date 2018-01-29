@@ -1,11 +1,11 @@
 #include "sort.h"
-#include <stdio.h>
 
 /**
  * partition - separates array into segments for quicksort
  * @array: pointer to array
  * @start: lowest index of array
  * @end: end index of array
+ * @size: size of the array
  *
  * Return: index of pivot
  */

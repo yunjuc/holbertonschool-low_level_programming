@@ -2,49 +2,82 @@
 #include <stdio.h>
 
 /**
+ * swap: swaps two nodes
+ * @a: 1st node
+ * @b: 2nd node
+ *
+ * Return: void
+ */
+void swap(listint_t **list, listint_t *a, listint_t *b)
+{
+	if (a == NULL || b == NULL || list == NULL || *list == NULL)
+		return;
+
+	if (b->prev)
+		b->prev->next = a;
+	a->prev = b->prev;
+	b->next = a->next;
+	if (a->next)
+		a->next->prev = b;
+	a->next = b;
+	b->prev = a;
+	if (a->prev == NULL)
+		*list = a;
+	print_list(*list);
+}
+/**
  * insertion_sort: bubble sort algorithm
  * @list: pointer to a doubly linked link
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *start, *swap, *temp;
+	listint_t *left_head, *right_head, *temp1, *temp2;
+	int flag = 1;
 
 	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
-	start = *list;
-	while (start != NULL)
+
+	left_head = *list;
+	right_head = (*list)->next;
+
+	while (right_head != NULL)
 	{
-		if (start->next != NULL && start->next->n < start->n)
+		if (left_head->n > right_head->n)
 		{
-			swap = start->next;
-			if (swap->next != NULL)
-				swap->next->prev = start;
-			if (start->prev != NULL)
-				start->prev->next = swap;
-			start->next = swap->next;
-			swap->prev = start->prev;
-			start->prev = swap;
-			swap->next = start;
-			print_list(*list);
-			while (swap->prev != NULL)
+			temp1 = right_head;
+			right_head = right_head->next;
+			swap(list, temp1, left_head);
+			while (temp1->prev && temp1->n < temp1->prev->n)
 			{
-				printf("{%d}", swap->n);
-				if (swap->prev->n > swap->n)
+				temp2 = temp1->prev;
+				swap(list, temp1, temp2);
+			}
+			if (right_head && left_head->n > right_head->n)
+			{
+				temp1 = right_head;
+				right_head = right_head->next;
+				swap(list, temp1, left_head);
+				while (temp1->n < temp1->prev->n)
 				{
-					temp = swap->prev;
-					if (temp->prev != NULL)
-						temp->prev->next = swap;
-					if (swap->next != NULL)
-						swap->next->prev = temp;
-					swap->prev = temp->prev;
-					temp->next = swap->next;
-					swap->next = temp;
-					temp->prev = swap;
-					print_list(*list);
+					temp2 = temp1->prev;
+					swap(list, temp1, temp2);
+					if (temp1 == *list)
+					{
+						flag = 0;
+						break;
+					}
+					flag = 1;
 				}
-				swap = swap->prev;
 			}
 		}
-		start = start->next;
-	}	
+		if (right_head)
+		{
+			if (flag && right_head->next)
+			{
+				left_head = left_head->next;
+				right_head = right_head->next;
+			}
+		}
+	}
 }
+

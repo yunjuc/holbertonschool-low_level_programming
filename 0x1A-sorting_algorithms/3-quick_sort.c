@@ -18,26 +18,53 @@ size_t partition(int *array, size_t start, size_t end, size_t size)
 	wall = start - 1;
 	j = start;
 
-	while (j < end)
+	while (j < end - 1)
 	{
 		if (array[j] < pivot)
 		{
 			wall++;
-			temp = array[j];
-			array[j] = array[wall];
-			array[wall] = temp;
-			print_array(array, size);
+			if (array[j] < array[wall])
+			{
+				temp = array[j];
+				array[j] = array[wall];
+				array[wall] = temp;
+				print_array(array, size);
+			}
+			j++;
 		}
 		j++;
 	}
 	if (pivot < array[wall+1])
 	{
-		temp = array[wall+1];
-		array[wall+1] = pivot;
-		array[end] = temp;
+		temp = pivot;
+		array[end] = array[wall+1];
+		array[wall+1] = temp;
 		print_array(array, size);
 	}
 	return (wall + 1);
+}
+
+/**
+ * sort - helper funtion to pass start and end index of the array
+ * @array: pointer to array
+ * @start: start index of the array
+ * @end: end index of the array
+ * @size: size of array
+ *
+ * Return: void
+ */
+void sort(int *array, size_t start, size_t end, size_t size)
+{
+	size_t i;
+
+	if (start >= end)
+		return;
+
+	i = partition(array, start, end, size);
+	if (i > start)
+		sort(array, start, i, size);
+	else
+		sort(array, i + 1, size - 1, size);
 }
 
 /**
@@ -49,12 +76,12 @@ size_t partition(int *array, size_t start, size_t end, size_t size)
  */
 void quick_sort(int *array, size_t size)
 {
-	size_t i;
+	size_t start, end;
 
-	if (size > 1)
-	{
-		i = partition(array, 0, size-1, size);
-		quick_sort(array, i);
-		quick_sort(array + i+1, size-i-1);
-	}
+	if (array == NULL || size < 2)
+		return;
+
+	start = 0;
+	end = size -1;
+	sort(array, start, end, size);
 }

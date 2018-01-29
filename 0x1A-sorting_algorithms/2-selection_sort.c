@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * selection_sort: selection sort
+ * selection_sort - selection sort
  * @array: pointer to an array
  * @size: size of the array
  */

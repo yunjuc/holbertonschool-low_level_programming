@@ -34,11 +34,11 @@ size_t partition(int *array, size_t start, size_t end, size_t size)
 		}
 		j++;
 	}
-	if (pivot < array[wall+1])
+	if (pivot < array[wall + 1])
 	{
 		temp = pivot;
-		array[end] = array[wall+1];
-		array[wall+1] = temp;
+		array[end] = array[wall + 1];
+		array[wall + 1] = temp;
 		print_array(array, size);
 	}
 	return (wall + 1);
@@ -82,6 +82,6 @@ void quick_sort(int *array, size_t size)
 		return;
 
 	start = 0;
-	end = size -1;
+	end = size - 1;
 	sort(array, start, end, size);
 }

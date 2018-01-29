@@ -47,7 +47,7 @@ size_t partition(int *array, size_t start, size_t end, size_t size)
 	i = start - 1;
 	j = start;
 
-	while (j < end)
+	while (j < end - 1)
 	{
 		if (array[j] < pivot)
 		{
@@ -63,12 +63,11 @@ size_t partition(int *array, size_t start, size_t end, size_t size)
 	{
 		temp = array[i + 1];
 		array[i + 1] = pivot;
-		pivot = temp;
+		array[end] = temp;
 		print_array(array, size);
 	}
 	return (i + 1);
 }
-
 
 
 /**

@@ -11,6 +11,7 @@
  */
 size_t partition(int *array, size_t start, size_t end, size_t size)
 {
+/*
 	size_t wall, j;
 	int pivot, temp;
 
@@ -38,7 +39,59 @@ size_t partition(int *array, size_t start, size_t end, size_t size)
 		print_array(array, size);
 	}
 	return (wall + 1);
+*/
+	size_t i, j;
+	int pivot, temp;
+
+	pivot = array[end];
+	i = start - 1;
+	j = start;
+
+	while (j < end)
+	{
+		if (array[j] < pivot)
+		{
+			i++;
+			temp = array[j];
+			array[j] = array[i];
+			array[i] = temp;
+			print_array(array, size);
+		}
+		j++;
+	}
+	if (pivot < array[i + 1])
+	{
+		temp = array[i + 1];
+		array[i + 1] = pivot;
+		pivot = temp;
+		print_array(array, size);
+	}
+	return (i + 1);
 }
+
+
+
+/**
+ * quicksort - implementation of quicksort with Lomuto partition scheme
+ * @array: pointer to array
+ * @start: start index of array
+ * @end: end index of array
+ * @size: size of array
+ *
+ * Return: void
+ */
+void quicksort(int *array, size_t start, size_t end, size_t size)
+{
+	size_t i;
+
+	if (start < end)
+	{
+		i = partition(array, start, end, size);
+		quicksort(array, start, i - 1, size);
+		quicksort(array, i + 1, end, size);
+	}
+}
+
 
 /**
  * quick_sort - implementation of quicksort with Lomuto partition scheme
@@ -49,12 +102,8 @@ size_t partition(int *array, size_t start, size_t end, size_t size)
  */
 void quick_sort(int *array, size_t size)
 {
-	size_t i;
-
-	if (size > 1)
-	{
-		i = partition(array, 0, size-1, size);
-		quick_sort(array, i);
-		quick_sort(array + i+1, size-i-1);
-	}
+	if (array == NULL || size <= 0)
+		return;
+	else
+		quicksort(array, 0, size - 1, size);
 }

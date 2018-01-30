@@ -20,7 +20,7 @@ size_t partition(int *array, size_t start, size_t end, size_t size)
 
 	while (j < end - 1)
 	{
-		if (array[j] <= pivot)
+		if (array[j] < pivot)
 		{
 			wall++;
 			if (array[j] < array[wall])
@@ -32,6 +32,8 @@ size_t partition(int *array, size_t start, size_t end, size_t size)
 			}
 			j++;
 		}
+		if (array[j] == pivot && array[j + 1 ] < pivot)
+			wall++;
 		j++;
 	}
 	if (pivot < array[wall + 1])

@@ -11,35 +11,6 @@
  */
 size_t partition(int *array, size_t start, size_t end, size_t size)
 {
-/*
-	size_t wall, j;
-	int pivot, temp;
-
-	pivot = array[end];
-	wall = start - 1;
-	j = start;
-
-	while (j < end)
-	{
-		if (array[j] < pivot)
-		{
-			wall++;
-			temp = array[j];
-			array[j] = array[wall];
-			array[wall] = temp;
-			print_array(array, size);
-		}
-		j++;
-	}
-	if (pivot < array[wall+1])
-	{
-		temp = array[wall+1];
-		array[wall+1] = pivot;
-		array[end] = temp;
-		print_array(array, size);
-	}
-	return (wall + 1);
-*/
 	size_t i, j;
 	int pivot, temp;
 
@@ -47,11 +18,11 @@ size_t partition(int *array, size_t start, size_t end, size_t size)
 	i = start - 1;
 	j = start;
 
-	while (j < end - 1)
+	while (j < end)
 	{
+		i++;
 		if (array[j] < pivot)
 		{
-			i++;
 			temp = array[j];
 			array[j] = array[i];
 			array[i] = temp;
@@ -59,7 +30,7 @@ size_t partition(int *array, size_t start, size_t end, size_t size)
 		}
 		j++;
 	}
-	if (pivot < array[i + 1])
+	if (array[end] < array[i + 1])
 	{
 		temp = array[i + 1];
 		array[i + 1] = pivot;
@@ -101,8 +72,12 @@ void quicksort(int *array, size_t start, size_t end, size_t size)
  */
 void quick_sort(int *array, size_t size)
 {
-	if (array == NULL || size <= 0)
+	size_t start, end;
+
+	if (array == NULL || size < 2)
 		return;
-	else
-		quicksort(array, 0, size - 1, size);
+
+	start = 0;
+	end = size - 1;
+	quicksort(array, start, end, size);
 }

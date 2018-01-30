@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * insertion_sort: bubble sort algorithm
+ * insertion_sort_list - bubble sort algorithm
  * @list: pointer to a doubly linked link
  */
 void insertion_sort_list(listint_t **list)
@@ -31,9 +31,8 @@ void insertion_sort_list(listint_t **list)
 				temp->prev = swap;
 				if (swap->prev == NULL)
 					*list = swap;
-				print_list(*list);	
+				print_list(*list);
 			}
-			
 		}
 		head = head->next;
 	}

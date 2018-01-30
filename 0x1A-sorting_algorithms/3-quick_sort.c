@@ -1,4 +1,5 @@
 #include "sort.h"
+#include <stdio.h>
 
 /**
  * partition - separates array into segments for quicksort
@@ -9,36 +10,29 @@
  *
  * Return: index of pivot
  */
-size_t partition(int *array, size_t start, size_t end, size_t size)
+size_t partition(int *array, int start, int end, size_t size)
 {
-	size_t wall, j;
-	int pivot, temp;
+	int wall = start - 1, j = start;
+	int pivot = array[end], temp;
 
-	pivot = array[end];
-	wall = start - 1;
-	j = start;
-
-	while (j < end - 1)
+	while (j < end)
 	{
 		if (array[j] < pivot)
 		{
 			wall++;
-			if (array[j] < array[wall])
+			if (wall != j && array[j] < array[wall])
 			{
-				temp = array[j];
-				array[j] = array[wall];
-				array[wall] = temp;
+				temp = array[wall];
+				array[wall] = array[j];
+				array[j] = temp;
 				print_array(array, size);
 			}
-			j++;
 		}
-		if (array[j] == pivot && array[j + 1 ] < pivot)
-			wall++;
 		j++;
 	}
-	if (pivot < array[wall + 1])
+	if (array[end] < array[wall + 1])
 	{
-		temp = pivot;
+		temp = array[end];
 		array[end] = array[wall + 1];
 		array[wall + 1] = temp;
 		print_array(array, size);
@@ -55,18 +49,15 @@ size_t partition(int *array, size_t start, size_t end, size_t size)
  *
  * Return: void
  */
-void sort(int *array, size_t start, size_t end, size_t size)
+void sort(int *array, int start, int end, size_t size)
 {
-	size_t i;
+	int p;
 
 	if (start >= end)
 		return;
-
-	i = partition(array, start, end, size);
-	if (i > start)
-		sort(array, start, i, size);
-	else
-		sort(array, i + 1, size - 1, size);
+	p = partition(array, start, end, size);
+	sort(array, start, p - 1, size);
+	sort(array, p + 1, end, size);
 }
 
 /**
@@ -78,12 +69,8 @@ void sort(int *array, size_t start, size_t end, size_t size)
  */
 void quick_sort(int *array, size_t size)
 {
-	size_t start, end;
-
 	if (array == NULL || size < 2)
 		return;
 
-	start = 0;
-	end = size - 1;
-	sort(array, start, end, size);
+	sort(array, 0, size - 1, size);
 }

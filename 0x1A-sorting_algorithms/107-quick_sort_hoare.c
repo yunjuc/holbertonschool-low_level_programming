@@ -1,6 +1,7 @@
 #include "sort.h"
 
-/*rtition - separates array into segments for quicksort
+/**
+ * partition - separates array into segments for quicksort
  * @array: pointer to array
  * @start: lowest index of array
  * @end: end index of array
@@ -66,8 +67,8 @@ void sort(int *array, int start, int end, size_t size)
 		sort(array, i + 1, size - 1, size);
 }
 
-/*
- * quick_sort - implementation of quicksort with Lomuto partition scheme
+/**
+ * quick_sort_hoare - implementation of quicksort with Lomuto partition scheme
  * @array: pointer to array
  * @size: size of array
  *

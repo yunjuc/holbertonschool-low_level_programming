@@ -1,5 +1,4 @@
 # -*- MakeFile -*-
-
 # target: dependencies
 #	action
 
@@ -7,9 +6,9 @@ all: holberton
 
 holberton: holberton.o main.o
 	gcc *.o -o holberton
-
+	
 holberton.o: holberton.c
 	gcc -c holberton.c
-
+	
 main.o: main.c
 	gcc -c main.c

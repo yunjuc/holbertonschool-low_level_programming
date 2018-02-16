@@ -1,0 +1,8 @@
+# target: dependencies
+#	action
+
+all:
+	gcc main.c holberton.c -o holberton
+
+clean: 
+	-rm *.o holberton

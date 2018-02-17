@@ -1,0 +1,13 @@
+# target: dependencies
+#	action
+
+CC = gcc
+SRC = main.c holberton.c
+OBJ = main.o holberton.o
+NAME = holberton
+
+all:
+	$(CC) $(SRC) -o $(NAME)
+
+clean: 
+	-rm *.o $(NAME)

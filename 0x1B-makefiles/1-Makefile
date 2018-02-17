@@ -6,6 +6,3 @@ SRC = main.c holberton.c
 
 all:
 	$(CC) $(SRC) -o holberton
-
-clean: 
-	-rm *.o holberton

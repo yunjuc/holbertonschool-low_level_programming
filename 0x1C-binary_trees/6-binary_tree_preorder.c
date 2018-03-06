@@ -4,7 +4,7 @@
 
 /**
  * binary_tree_preorder - travse a tree in pre-order manner
- * @tree: pointer to the node to check
+ * @tree: pointer to the root node
  * @func: pointer to a functiont to print node
  * Return: none
  */

@@ -3,8 +3,8 @@
 #include <stdio.h>
 
 /**
- * binary_tree_is_leaf - check if a node is root
- * @parent: pointer to the node to check
+ * binary_tree_is_root - check if a node is root
+ * @node: pointer to the node to check
  * Return: 1 if a node, 0 otherwise
  */
 int binary_tree_is_root(const binary_tree_t *node)
@@ -14,5 +14,5 @@ int binary_tree_is_root(const binary_tree_t *node)
 	else if (node->parent == NULL)
 		return (1);
 	else
-		return (0);	
+		return (0);
 }

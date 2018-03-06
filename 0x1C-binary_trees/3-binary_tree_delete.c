@@ -4,7 +4,7 @@
 
 /**
  * binary_tree_delete - delete a tree
- * @parent: pointer to tree root note
+ * @tree: pointer to tree root note
  * Return: none
  */
 void binary_tree_delete(binary_tree_t *tree)
@@ -13,7 +13,7 @@ void binary_tree_delete(binary_tree_t *tree)
 		return;
 
 	binary_tree_delete(tree->left);
-	binary_tree_delete(tree->right);	
+	binary_tree_delete(tree->right);
 
 	free(tree);
 }

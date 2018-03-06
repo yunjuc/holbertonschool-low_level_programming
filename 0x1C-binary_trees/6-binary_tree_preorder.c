@@ -4,7 +4,8 @@
 
 /**
  * binary_tree_preorder - travse a tree in pre-order manner
- * @parent: pointer to the node to check
+ * @tree: pointer to the node to check
+ * @func: pointer to a functiont to print node
  * Return: none
  */
 void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int))

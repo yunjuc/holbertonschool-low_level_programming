@@ -2,10 +2,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int binary_tree_balance(const binary_tree_t *tree);
 int binary_tree_is_full(const binary_tree_t *tree);
+int binary_tree_balance(const binary_tree_t *tree);
 int tree_height(const binary_tree_t *node);
-size_t binary_tree_leaves(const binary_tree_t *tree);
 
 /**
  * binary_tree_is_perfect - checks if a binary tree is perfect
@@ -31,30 +30,11 @@ int binary_tree_is_full(const binary_tree_t *tree)
 {
 	if (tree == NULL)
 		return (0);
-	if (tree_height(tree->left) == tree_height(tree->right) &&
-	binary_tree_leaves(tree->left) == binary_tree_leaves(tree->right))
+	if (binary_tree_is_full(tree->left) == binary_tree_is_full(tree->right))
 		return (1);
 	else
 		return (0);
 }
-
-
-/**
- * binary_tree_leaves - counts leaves of a binary tree
- * @tree: pointer to the root node
- * Return: number of leaves of the tree
- */
-size_t binary_tree_leaves(const binary_tree_t *tree)
-{
-	if (tree == NULL)
-		return (0);
-	if (tree->left == NULL || tree->right == NULL)
-		return (1);
-	else
-		return (binary_tree_leaves(tree->left) + binary_tree_leaves(tree->right));
-}
-
-int tree_height(const binary_tree_t *node);
 
 /**
  * binary_tree_balance - measure height of a binary tree

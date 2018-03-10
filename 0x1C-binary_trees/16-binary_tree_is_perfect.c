@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int binary_tree_is_leaf(const binary_tree_t *node);
 int binary_tree_is_full(const binary_tree_t *tree);
 int tree_height(const binary_tree_t *node);
 int binary_tree_balance(const binary_tree_t *tree);
@@ -49,7 +48,7 @@ int binary_tree_is_full(const binary_tree_t *tree)
 		return (0);
 	if (tree->left == NULL && tree->right == NULL)
 		return (1);
-	if ((tree->left) && (tree->right) && binary_tree_balance(tree) == 0)
+	if ((tree->left) && (tree->right))
 		return (binary_tree_is_full(tree->left) &&
 			binary_tree_is_full(tree->right));
 	return (0);

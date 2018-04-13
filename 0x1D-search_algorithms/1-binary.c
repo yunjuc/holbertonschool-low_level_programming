@@ -3,21 +3,22 @@
 /**
  * print_array - print an array
  * @array: pointer to the first element of the array
- * @value: size of the array
+ * @low: lowest index of the array
+ * @high: highest index of the array
  * Return: none
  */
-void print_array(int *array, int size)
+void print_array(int *array, int low, int high)
 {
-	int i = 0;
+	int i;
 
 	printf("Searching in array: ");
-	for (i = 0; i < size - 1; i++)
+	for (i = low; i <= high; i++)
 		printf("%d, ", array[i]);
 	printf("%d\n", array[i]);
 }
 
 /**
- * search - compare array with value 
+ * search - compare array with value
  * @array: pointer to the first element of the array
  * @low: smallest index in the array
  * @high: biggest index in the array
@@ -28,25 +29,23 @@ int search(int *array, int low, int high, int value)
 {
 	int mid;
 
+	print_array(array, low, high);
 	if (high - low > 0)
 	{
-		mid = low + high / 2;
+		mid = (high - low / 2) + low;
 		if (array[mid] == value)
 		{
 			return (mid);
 		}
 		if (array[mid] > value)
 		{
-			print_array(&array[low], mid - low + 1);
-			return (search(array, low, mid ,value));
+			return (search(array, low, mid - 1, value));
 		}
 		if (array[mid] < value)
 		{
-			print_array(&array[mid + 1], high - mid);
 			return (search(array, mid + 1, high, value));
 		}
 	}
-	print_array(&array[low], 1);
 	return (-1);
 }
 
@@ -60,11 +59,10 @@ int search(int *array, int low, int high, int value)
 int binary_search(int *array, size_t size, int value)
 {
 	int index;
-	int low = 0, high = size -1;
+	int low = 0, high = size - 1;
 
 	if (array == NULL)
 		return (-1);
-	print_array(array, size);
 	index = search(array, low, high, value);
 	return (index);
 }

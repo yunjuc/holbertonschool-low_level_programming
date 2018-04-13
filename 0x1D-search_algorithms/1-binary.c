@@ -12,7 +12,7 @@ void print_array(int *array, int low, int high)
 	int i;
 
 	printf("Searching in array: ");
-	for (i = low; i <= high; i++)
+	for (i = low; i < high; i++)
 		printf("%d, ", array[i]);
 	printf("%d\n", array[i]);
 }
@@ -32,7 +32,7 @@ int search(int *array, int low, int high, int value)
 	print_array(array, low, high);
 	if (high - low > 0)
 	{
-		mid = (high - low / 2) + low;
+		mid = low + (high - low) / 2;
 		if (array[mid] == value)
 		{
 			return (mid);
